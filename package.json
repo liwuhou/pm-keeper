@@ -1,31 +1,34 @@
 {
-  "name": "pm_keeper",
+  "name": "pm-keeper",
   "version": "1.0.0",
   "description": "package version keeper",
   "main": "dist/index.js",
+  "author": "hugewilliam <hugewilliam@foxmail.com>",
+  "license": "MIT",
   "files": [
-    "bin"
+    "dist"
   ],
   "bin": {
     "pm-keeper": "dist/index.js"
   },
   "scripts": {
     "test": "test",
-    "dev": "yarn install",
-    "preinstall": "esno src/index.ts pnpm"
+    "build": "tsup src/index.ts dist/bin.js"
   },
   "keywords": [
     "npm",
     "yarn",
     "pnpm"
   ],
-  "author": "hugewilliam <hugewilliam@foxmail.com>",
-  "license": "ISC",
   "devDependencies": {
     "@types/node": "^17.0.0",
     "eslint": "^8.4.1",
     "esno": "^0.13.0",
     "esup": "^0.0.0",
+    "tsup": "^5.11.6",
     "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "boxen": "^6.2.1"
   }
 }
