@@ -14,7 +14,7 @@ Add a `preinstall` script in your project's `package.json`.
 }
 ```
 
-And Add a `pmKeeper` options in ypur `package.json`.
+And add a `pmKeeper` options in ypur `package.json`.
 
 ```json
 {
