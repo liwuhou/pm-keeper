@@ -1,4 +1,4 @@
-name: Release
+name: publish
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'v*'
 
 jobs:
-  release:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,8 +16,8 @@ jobs:
         with:
           node-version: '14'
           registry-url: https://registry.npmjs.org/
-      - run: npm i -g pnpm @antfu/ni
-      - run: nci
+      - run: npm i -g pnpm
+      - run: pnpm install
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
