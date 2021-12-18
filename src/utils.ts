@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import process from 'node:process'
 
 export interface Agentinfo {
-  nodeVersion: string
+  nodeVersion?: string
   version: string
   name: string
 }
@@ -34,4 +34,28 @@ export const getPackageJSON = (cwd = process.cwd()) => {
       process.exit(0)
     }
   }
+}
+
+const getArgvConf = (argv: string[]): Agentinfo => {
+  const [name, version] = argv.length >= 2 ? argv : argv[0].split('@')
+
+  return {
+    name,
+    version
+  }
+}
+
+export const getAgentConfig = (): void | Agentinfo => {
+  const argv = process.argv.slice(2)
+  if (argv.length) {
+    return getArgvConf(argv)
+  } else {    
+    const { pmKeeper } = getPackageJSON()
+    return pmKeeper
+  }
+}
+
+export const checkVersionValid = (version?: string): boolean => {
+  if (!version) return true
+  return /^([1-9]\d|[1-9])(\.([1-9]\d|\d)){2}$/.test(version)
 }
