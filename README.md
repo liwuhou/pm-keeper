@@ -1,28 +1,51 @@
 # pm-keeper
 
-A keeper of package manager. Make sure a specific version and package manager to be used in project.
+A simple way to force package-manager in your project.
 
 # usage
 
-Add a `preinstall` script in your project's `package.json`.
+Add a `preinstall` script in your project's `package.json`, link this:
+
+```json
+{
+  "scripts": {
+    "preinstall": "npx pm-keeper npm"
+  }
+}
+```
+
+And force the package-manager's version
+
+```json
+{
+  "scripts": {
+    "preinstall": "npx pm-keeper npm@6.14.11"
+  }
+}
+```
+
+or
+
+```json
+{
+  "scripts": {
+    "preinstall": "npx pm-keeper npm 6.14.11"
+  }
+}
+```
+
+Of course, you can set a options in your `package.json`, link this:
 
 ```json
 {
   "scripts": {
     "preinstall": "npx pm-keeper"
-  }
-}
-```
-
-And add a `pmKeeper` options in ypur `package.json`.
-
-```json
-{
+  },
   "pmKeeper": {
-    "name": "npm", // package manager name
-    // "version": "6.14.1" // package manager version
+    "name": "npm",
+    "version": "6.14.1" // optional
   }
 }
 ```
 
-enjoy
+have fun
