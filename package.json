@@ -1,12 +1,10 @@
 {
   "name": "pm-keeper",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "package version keeper",
   "author": "liwuhou <hugewilliam@foxmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "bin"
@@ -15,7 +13,7 @@
   "scripts": {
     "dev": "npm run build -- --watch",
     "prebuild": "rimraf dist",
-    "build": "tsup src --format cjs,esm,iife --dts"
+    "build": "tsup src --format iife --minify"
   },
   "keywords": [
     "npm",
