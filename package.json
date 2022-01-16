@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/liwuhou/pm-keeper"
   },
+  "bugs": "https://github.com/liwuhou/pm-keeper/issues",
   "files": [
     "dist",
     "bin"
