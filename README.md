@@ -4,7 +4,7 @@ A simple way to force package-manager in your project.
 
 # usage
 
-Add a `preinstall` script in your project's `package.json`, link this:
+Add a `preinstall` script in your project's `package.json`, like this:
 
 ```json
 {
