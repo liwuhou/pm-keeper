@@ -34,7 +34,7 @@ or
 }
 ```
 
-Of course, you can set a options in your `package.json`, link this:
+Of course, you can set a options in your `package.json`, like this:
 
 ```json
 {
